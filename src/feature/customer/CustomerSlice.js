@@ -2,25 +2,25 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchCustomer = createAsyncThunk("customer/fetchCustomer", async () => {
-  const res = await axios.get("http://localhost:8000/users");
+  const res = await axios.get("https://todo-app-91fe.onrender.com/users");
   return res.data;
 });
 
 export const createCustomer = createAsyncThunk("customer/createCustomer", async customer => {
-  const res = await axios.post("http://localhost:8000/users", customer);
+  const res = await axios.post("https://todo-app-91fe.onrender.com/users", customer);
   return res.data;
 });
 
 export const updateCustomer = createAsyncThunk("customer/updateCustomer", async customer => {
   const res = await axios.put(
-    `http://localhost:8000/users/${customer.id}`,
+    `https://todo-app-91fe.onrender.com/users/${customer.id}`,
     customer
   );
   return res.data;
 });
 
 export const deleteCustomer = createAsyncThunk("customer/deleteCustomer", async customerId => {
-  await axios.delete(`http://localhost:8000/users/${customerId}`);
+  await axios.delete(`https://todo-app-91fe.onrender.com/users/${customerId}`);
   return customerId;
 });
 
