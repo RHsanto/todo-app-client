@@ -6,7 +6,7 @@ import { updateCustomer } from "./CustomerSlice";
 const UpdateCustomer = () => {
   const location = useLocation();
   // eslint-disable-next-line no-unused-vars
-  const [id, setId] = useState(location.state.id);
+  const [id, setId] = useState(location.state._id);
   const [name, setName] = useState(location.state.name);
   const [email, setEmail] = useState(location.state.email);
   const [phone, setPhone] = useState(location.state.phone);
